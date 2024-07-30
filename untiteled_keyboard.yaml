@@ -1,0 +1,23 @@
+units:
+  # Proxy Spacing Variables
+  kx: u
+  ky: u
+  # Padding Variables
+  px: u + 2
+  py: U + 2
+points:
+  zones:
+    matrix:
+      columns:
+        outer:
+        pinky:
+        ring:
+          key:
+            stagger: 5
+        middle:
+        index:
+        inner:
+      rows:
+        nottom:
+        home:
+        top:

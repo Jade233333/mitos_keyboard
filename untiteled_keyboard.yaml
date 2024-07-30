@@ -8,16 +8,48 @@ units:
 points:
   zones:
     matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
       columns:
         outer:
         pinky:
+          key:
+            stagger: 2.5
         ring:
           key:
             stagger: 5
         middle:
+          key:
+            stagger: 2.5
         index:
+          key:
+            stagger: -2.5
         inner:
+          key:
+            stagger: -2.5
       rows:
-        nottom:
+        bottom:
         home:
         top:
+    thumbs:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-0.8ky, -1ky]
+      columns:
+        command:
+          key:
+            splay: -10
+        layer:
+          key:
+            splay: -10
+            shift: [1,0]
+        space:
+          key:
+            splay: -10
+            shift: [2,0]
+      rows:
+        cluster:

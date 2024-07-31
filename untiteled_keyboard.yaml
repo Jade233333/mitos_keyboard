@@ -3,8 +3,8 @@ units:
   kx: u
   ky: u
   # Padding Variables
-  px: u + 2
-  py: U + 2
+  px: u + 4
+  py: u + 4
 points:
   zones:
     matrix:
@@ -15,41 +15,90 @@ points:
         outer:
         pinky:
           key:
-            stagger: 2.5
+            stagger: 0.1kx
         ring:
           key:
-            stagger: 5
+            stagger: 0.4kx
         middle:
           key:
-            stagger: 2.5
+            stagger: 0.15kx
         index:
           key:
-            stagger: -2.5
+            stagger: -0.15kx
         inner:
           key:
-            stagger: -2.5
+            stagger: -0.1kx
       rows:
         bottom:
         home:
         top:
-    thumbs:
+    thumb:
       key:
         padding: 1ky
         spread: 1kx
       anchor:
-        ref: matrix_inner_bottom
-        shift: [-0.8ky, -1ky]
+        ref: matrix_index_bottom
+        shift: [-0.8kx, -1ky]
       columns:
+        mod:
+          key:
         command:
           key:
             splay: -10
+            shift: [0.1kx,-0.06ky]
         layer:
           key:
             splay: -10
-            shift: [1,0]
+            shift: [0.17kx,-0.01ky]
         space:
           key:
             splay: -10
-            shift: [2,0]
+            shift: [0.25kx,0]
       rows:
         cluster:
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px,py]
+      fillet: 2
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_ring_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_outer_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_outer_bottom
+          shift: [-0.5px, -0.5py]
+        - ref: matrix_outer_bottom
+          shift: [2px, -0.5py]
+        - ref: thumb_mod_cluster
+          shift: [-0.5px,-0.5py]
+        - ref: thumb_mod_cluster
+          shift: [0.5px,-0.5py]
+        - ref: thumb_space_cluster
+          shift: [0.5px,-0.5py]
+        - ref: thumb_space_cluster
+          shift: [0.5px,0.5py]
+        - ref: matrix_inner_top
+          shift: [1.8px, 0.5py]
+        - ref: matrix_inner_top
+          shift: [0.5px, 0.5py]
+      fillet: 2
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [kx-0.5,ky-0.5]
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys

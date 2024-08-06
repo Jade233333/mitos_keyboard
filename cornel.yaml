@@ -98,7 +98,7 @@ outlines:
       where: true
       bound: false
       size: [kx-0.5,ky-0.5]
-  combo:
+  plate:
     - name: board
     - operation: subtract
       name: keys

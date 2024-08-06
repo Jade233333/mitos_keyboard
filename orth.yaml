@@ -1,0 +1,71 @@
+units:
+  # Proxy Spacing Variables
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: cx + 4
+  py: cy + 4
+  $default_width: cx
+  $default_height: cy
+points:
+  zones:
+    matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
+      columns:
+        pinky:
+          rows.thumb.skip: true
+          key:
+            stagger: 0
+        ring:
+          rows.thumb.skip: true
+          key:
+            stagger: 5
+        middle:
+          rows.thumb.skip: true
+          key:
+            stagger: 3
+        index:
+          key:
+            stagger: -8
+        inner:
+          key:
+            stagger: -2
+      rows:
+        thumb:
+        bottom:
+        home:
+        top:
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px,py]
+      fillet: 2
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_thumb
+          shift: [0.5px,-0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-0.5py-kx-1]
+        - ref: matrix_pinky_home
+          shift: [-0.5px,0]
+        - ref: matrix_inner_home
+          shift: [0.5px,0]
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [kx-0.5,ky-0.5]
+  combo:
+    - name: board
+    - operation: add
+      name: raw
+    - operation: subtract
+      name: keys
+    
+
+

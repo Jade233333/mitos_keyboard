@@ -60,12 +60,34 @@ outlines:
       where: true
       bound: false
       size: [kx-0.5,ky-0.5]
-  combo:
+  plate:
     - name: board
     - operation: add
       name: raw
     - operation: subtract
       name: keys
-    
-
+pcbs:
+  board:
+    outlines:
+      main:
+        outlines: board
+    footprints: 
+      keyswitches:
+        where:  true
+        what: choc
+        params:
+          hotswap: true
+          reverse: true
+          keycaps: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+        adjust:
+          shift: [0, -5]
+          
 

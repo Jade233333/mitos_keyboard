@@ -10,6 +10,8 @@ units:
 points:
   zones:
     matrix:
+      anchor:
+        shift: [175,-175]
       key:
         padding: 1ky
         spread: 1kx
@@ -60,17 +62,19 @@ outlines:
       where: true
       bound: false
       size: [kx-0.5,ky-0.5]
-  plate:
+  outline:
     - name: board
     - operation: add
       name: raw
+  plate:
+    - name: outline
     - operation: subtract
       name: keys
 pcbs:
   board:
     outlines:
       main:
-        outlines: board
+        outline: outline
     footprints: 
       keyswitches:
         where:  true
@@ -89,5 +93,12 @@ pcbs:
           to: "{{colrow}}"
         adjust:
           shift: [0, -5]
-          
+      nice_nano:
+        what: nice_nano
+        params:
+          orientation: "down"
+        where:
+          ref: matrix_index_thumb
+          shift: [-45,-1.5]
+          rotate: 0
 

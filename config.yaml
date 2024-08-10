@@ -44,7 +44,7 @@ outlines:
     - what: rectangle
       where: true
       size: [px,py]
-      fillet: 2
+      fillet: 0.8
   board:
     - what: polygon
       operation: stack
@@ -56,7 +56,8 @@ outlines:
         - ref: matrix_pinky_home
           shift: [-0.5px,0]
         - ref: matrix_inner_home
-          shift: [0.5px,0]
+          shift: [0.5px,0] 
+      fillet: 0.8
   keys:
     - what: rectangle
       where: true
@@ -101,4 +102,12 @@ pcbs:
           ref: matrix_index_thumb
           shift: [-45,-1.5]
           rotate: 0
-
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_index_thumb
+          shift: [-25,-1.5]
+          rotate: -90

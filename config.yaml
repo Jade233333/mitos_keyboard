@@ -20,25 +20,34 @@ points:
           rows.thumb.skip: true
           key:
             stagger: 0
+            column_net: P006
         ring:
           rows.thumb.skip: true
           key:
             stagger: 5
+            column_net: P008
         middle:
           rows.thumb.skip: true
           key:
             stagger: 3
+            column_net: P017
         index:
           key:
             stagger: -8
+            column_net: P020
         inner:
           key:
             stagger: -2
+            column_net: P022
       rows:
         thumb:
+          row_net: P024
         bottom:
+          row_net: P100
         home:
+          row_net: P011
         top:
+          row_net: P104
 outlines:
   raw:
     - what: rectangle
@@ -82,7 +91,7 @@ pcbs:
         what: choc
         params:
           hotswap: true
-          reverse: true
+          reverse: false 
           keycaps: true
           from: "{{column_net}}"
           to: "{{colrow}}"
@@ -90,11 +99,11 @@ pcbs:
         what: diode
         where: true
         params:
-          from: "{{column_net}}"
-          to: "{{colrow}}"
+          from: "{{colrow}}"
+          to: "{{row_net}}"
         adjust:
           shift: [0, -5]
-      nice_nano:
+      mcu:
         what: nice_nano
         params:
           orientation: "down"
@@ -102,12 +111,3 @@ pcbs:
           ref: matrix_index_thumb
           shift: [-45,-1.5]
           rotate: 0
-      reset:
-        what: button
-        params:
-          from: GND
-          to: RST
-        where:
-          ref: matrix_index_thumb
-          shift: [-25,-1.5]
-          rotate: -90

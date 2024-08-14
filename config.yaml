@@ -91,7 +91,7 @@ pcbs:
         what: choc
         params:
           hotswap: true
-          reverse: false 
+          reverse: true 
           keycaps: true
           from: "{{column_net}}"
           to: "{{colrow}}"
@@ -104,10 +104,10 @@ pcbs:
         adjust:
           shift: [0, -5]
       mcu:
-        what: nice_nano
+        what: mcu_nice_nano
         params:
-          orientation: "down"
+          reversible: true
         where:
           ref: matrix_index_thumb
           shift: [-45,-1.5]
-          rotate: 0
+          rotate: 90 

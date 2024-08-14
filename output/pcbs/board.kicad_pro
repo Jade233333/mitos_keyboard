@@ -256,6 +256,10 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P006"
+      },
+      {
+        "netclass": "Default",
         "pattern": "pinky_bottom"
       },
       {
@@ -265,6 +269,10 @@
       {
         "netclass": "Default",
         "pattern": "pinky_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P008"
       },
       {
         "netclass": "Default",
@@ -280,6 +288,10 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P017"
+      },
+      {
+        "netclass": "Default",
         "pattern": "middle_bottom"
       },
       {
@@ -289,6 +301,10 @@
       {
         "netclass": "Default",
         "pattern": "middle_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P020"
       },
       {
         "netclass": "Default",
@@ -308,6 +324,10 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P022"
+      },
+      {
+        "netclass": "Default",
         "pattern": "inner_thumb"
       },
       {
@@ -321,6 +341,22 @@
       {
         "netclass": "Default",
         "pattern": "inner_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P100"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P011"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P104"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P024"
       },
       {
         "netclass": "Default",
@@ -340,75 +376,75 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P031"
+        "pattern": "P21"
       },
       {
         "netclass": "Default",
-        "pattern": "P029"
+        "pattern": "P20"
       },
       {
         "netclass": "Default",
-        "pattern": "P002"
+        "pattern": "P19"
       },
       {
         "netclass": "Default",
-        "pattern": "P115"
+        "pattern": "P18"
       },
       {
         "netclass": "Default",
-        "pattern": "P113"
+        "pattern": "P15"
       },
       {
         "netclass": "Default",
-        "pattern": "P111"
+        "pattern": "P14"
       },
       {
         "netclass": "Default",
-        "pattern": "P010"
+        "pattern": "P16"
       },
       {
         "netclass": "Default",
-        "pattern": "P009"
+        "pattern": "P10"
       },
       {
         "netclass": "Default",
-        "pattern": "P006"
+        "pattern": "P1"
       },
       {
         "netclass": "Default",
-        "pattern": "P008"
+        "pattern": "P0"
       },
       {
         "netclass": "Default",
-        "pattern": "P017"
+        "pattern": "P2"
       },
       {
         "netclass": "Default",
-        "pattern": "P020"
+        "pattern": "P3"
       },
       {
         "netclass": "Default",
-        "pattern": "P022"
+        "pattern": "P4"
       },
       {
         "netclass": "Default",
-        "pattern": "P024"
+        "pattern": "P5"
       },
       {
         "netclass": "Default",
-        "pattern": "P100"
+        "pattern": "P6"
       },
       {
         "netclass": "Default",
-        "pattern": "P011"
+        "pattern": "P7"
       },
       {
         "netclass": "Default",
-        "pattern": "P104"
+        "pattern": "P8"
       },
       {
         "netclass": "Default",
-        "pattern": "P106"
+        "pattern": "P9"
       },
       {
         "netclass": "Default",
@@ -421,6 +457,102 @@
       {
         "netclass": "Default",
         "pattern": "P107"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_24"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_1"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_23"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_2"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_22"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_3"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_21"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_4"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_20"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_5"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_19"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_6"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_18"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_7"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_17"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_8"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_16"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_9"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_15"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_10"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_14"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_11"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_13"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MCU1_12"
       }
     ]
   },

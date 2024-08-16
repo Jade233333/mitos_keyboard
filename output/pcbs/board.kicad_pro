@@ -256,11 +256,15 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P006"
+        "pattern": "P2"
       },
       {
         "netclass": "Default",
         "pattern": "pinky_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GND"
       },
       {
         "netclass": "Default",
@@ -272,7 +276,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P008"
+        "pattern": "P3"
       },
       {
         "netclass": "Default",
@@ -288,7 +292,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P017"
+        "pattern": "P4"
       },
       {
         "netclass": "Default",
@@ -304,7 +308,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P020"
+        "pattern": "P5"
       },
       {
         "netclass": "Default",
@@ -324,7 +328,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P022"
+        "pattern": "P6"
       },
       {
         "netclass": "Default",
@@ -344,27 +348,23 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P100"
+        "pattern": "P16"
       },
       {
         "netclass": "Default",
-        "pattern": "P011"
+        "pattern": "P14"
       },
       {
         "netclass": "Default",
-        "pattern": "P104"
+        "pattern": "P10"
       },
       {
         "netclass": "Default",
-        "pattern": "P024"
+        "pattern": "P15"
       },
       {
         "netclass": "Default",
         "pattern": "RAW"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "GND"
       },
       {
         "netclass": "Default",
@@ -392,47 +392,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P15"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P14"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P16"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P10"
-      },
-      {
-        "netclass": "Default",
         "pattern": "P1"
       },
       {
         "netclass": "Default",
         "pattern": "P0"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P2"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P3"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P4"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P5"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P6"
       },
       {
         "netclass": "Default",
@@ -553,6 +517,18 @@
       {
         "netclass": "Default",
         "pattern": "MCU1_12"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "BAT_P"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "JST1_1"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "JST1_2"
       }
     ]
   },

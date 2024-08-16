@@ -1,12 +1,12 @@
 units:
   # Proxy Spacing Variables
-  kx: cx
-  ky: cy
+  kx: 18
+  ky: 18
   # Padding Variables
-  px: cx + 4
-  py: cy + 4
-  $default_width: cx
-  $default_height: cy
+  px: 18 + 4
+  py: 18 + 4
+  $default_width: 18
+  $default_height: 18
 points:
   zones:
     matrix:
@@ -20,34 +20,34 @@ points:
           rows.thumb.skip: true
           key:
             stagger: 0
-            column_net: P006
+            column_net: P2
         ring:
           rows.thumb.skip: true
           key:
             stagger: 5
-            column_net: P008
+            column_net: P3
         middle:
           rows.thumb.skip: true
           key:
             stagger: 3
-            column_net: P017
+            column_net: P4
         index:
           key:
             stagger: -8
-            column_net: P020
+            column_net: P5
         inner:
           key:
             stagger: -2
-            column_net: P022
+            column_net: P6
       rows:
         thumb:
-          row_net: P024
+          row_net: P15
         bottom:
-          row_net: P100
+          row_net: P14
         home:
-          row_net: P011
+          row_net: P16
         top:
-          row_net: P104
+          row_net: P10
 outlines:
   raw:
     - what: rectangle
@@ -61,7 +61,7 @@ outlines:
         - ref: matrix_inner_thumb
           shift: [0.5px,-0.5py]
         - ref: matrix_pinky_bottom
-          shift: [-0.5px,-0.5py-kx-1]
+          shift: [-0.5px,-0.5py-kx-2]
         - ref: matrix_pinky_home
           shift: [-0.5px,0]
         - ref: matrix_inner_home
@@ -88,26 +88,52 @@ pcbs:
     footprints: 
       keyswitches:
         where:  true
-        what: choc
+        what: switch_gateron_ks27_ks33
         params:
-          hotswap: true
-          reverse: true 
-          keycaps: true
+          reversible: true 
+          include_keycap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode:
-        what: diode
+        what: diode_tht_sod123 
         where: true
         params:
+          include_tht: true
+          reversible: true 
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0, -5]
+          shift: [7, 3.25]
+          rotate: 90
       mcu:
         what: mcu_nice_nano
         params:
           reversible: true
         where:
           ref: matrix_index_thumb
-          shift: [-45,-1.5]
+          shift: [-46.5,-1.95]
           rotate: 90 
+      reset:
+        what: reset_switch_tht_top
+        params:
+          reversible: true
+        where:
+          ref: matrix_ring_bottom 
+          shift: [0, -12.35]
+      power: 
+        what: power_switch_smd_side
+        params:
+          reversible: true
+        where:
+          ref: matrix_middle_bottom
+          shift: [-4.5, -16]
+          rotate: 180
+      battery:
+        what: battery_connector_jst_ph_2
+        params:
+          reversible: true
+        where:
+          ref: matrix_middle_bottom
+          shift: [4, -11.85]
+
+

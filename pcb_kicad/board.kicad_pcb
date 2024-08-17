@@ -72,7 +72,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "untitled_keyboard/")
+			(outputdirectory "../../MITOS_MK1_ks/pcb/")
 		)
 	)
 	(net 0 "")
@@ -13455,6 +13455,18 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "f6e1e876-497b-4d83-9f72-91d4a29305ca")
+	)
+	(gr_text "JLCJLCJLCJLC"
+		(at 234 185.25 0)
+		(layer "B.SilkS")
+		(uuid "41d9d857-b4a7-4d14-b3d8-d42acac1e874")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
 	)
 	(gr_text "MITOS\nB.JH"
 		(at 218.25 184.75 0)

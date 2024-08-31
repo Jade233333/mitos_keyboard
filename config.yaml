@@ -1,10 +1,10 @@
 units:
   # Proxy Spacing Variables
-  kx: 18
-  ky: 18
+  kx: 19
+  ky: 19
   # Padding Variables
-  px: 18 + 4
-  py: 18 + 4
+  px: kx + 4
+  py: ky + 4
   $default_width: 18
   $default_height: 18
 points:

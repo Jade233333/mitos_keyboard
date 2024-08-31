@@ -537,7 +537,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../../MITOS_MK1_ks/pcb/",
+      "plot": "gbr/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

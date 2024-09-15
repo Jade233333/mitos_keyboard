@@ -1,10 +1,12 @@
 units:
   # Proxy Spacing Variables
-  kx: u 
-  ky: u
+  kx: 19
+  ky: 19
   # Padding Variables
   px: kx + 4
   py: ky + 4
+  $default_width: 18
+  $default_height: 18
 points:
   zones:
     matrix:
@@ -50,38 +52,34 @@ outlines:
   raw:
     - what: rectangle
       where: true
-      size: [kx,ky]
+      size: [px,py]
       fillet: 0.8
   board:
     - what: polygon
       operation: stack
       points:
         - ref: matrix_inner_thumb
-          shift: [0.5kx,-0.5ky]
+          shift: [0.5px,-0.5py]
         - ref: matrix_pinky_bottom
-          shift: [-0.5kx,-1.5ky-2]
+          shift: [-0.5px,-0.5py-kx-2]
         - ref: matrix_pinky_home
-          shift: [-0.5kx,0]
+          shift: [-0.5px,0]
         - ref: matrix_inner_home
-          shift: [0.5kx,0] 
+          shift: [0.5px,0] 
       fillet: 0.8
   keys:
     - what: rectangle
       where: true
       bound: false
-      size: [14, 14]
+      size: [kx-0.5,ky-0.5]
   outline:
     - name: board
     - operation: add
       name: raw
   plate:
-    - name: raw 
+    - name: outline
     - operation: subtract
       name: keys
-cases:
-  plate:
-    - name: plate
-      extrude: 1.2
 pcbs:
   board:
     outlines:

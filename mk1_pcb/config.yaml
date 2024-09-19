@@ -1,7 +1,7 @@
 units:
   # Proxy Spacing Variables
-  kx: 19 
-  ky: 19
+  kx: 18 
+  ky: 18
   # Padding Variables
   px: kx + 4
   py: ky + 4

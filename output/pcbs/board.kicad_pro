@@ -348,19 +348,19 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P14"
-      },
-      {
-        "netclass": "Default",
         "pattern": "P16"
       },
       {
         "netclass": "Default",
-        "pattern": "P10"
+        "pattern": "P14"
       },
       {
         "netclass": "Default",
         "pattern": "P15"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P10"
       },
       {
         "netclass": "Default",
@@ -521,14 +521,6 @@
       {
         "netclass": "Default",
         "pattern": "BAT_P"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "JST1_1"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "JST1_2"
       }
     ]
   },

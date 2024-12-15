@@ -1,8 +1,7 @@
 units:
-  kx: u 
-  ky: u 
-  px: kx+2
-  py: ky+2
+  # Proxy Spacing Variables
+  kx: 19 
+  ky: 19
 points:
   zones:
     matrix:
@@ -50,7 +49,7 @@ outlines:
       where: true
       size: [kx,ky]
       fillet: 0.8
-  compensation:
+  board:
     - what: polygon
       operation: stack
       points:
@@ -69,7 +68,7 @@ outlines:
       bound: false
       size: [14, 14]
   outline:
-    - name: compensation 
+    - name: board
     - operation: add
       name: raw
   plate:
@@ -129,7 +128,7 @@ pcbs:
           shift: [-6, -35]
           rotate: -90
       battery:
-        what: battery_connector_jst_ph_2
+        what: battery_connector_molex_pico_ezmate_1x02
         params:
           reversible: true
         where:

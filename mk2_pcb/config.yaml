@@ -5,8 +5,6 @@ units:
   # Padding Variables
   px: kx + 4
   py: ky + 4
-  $default_width: 18
-  $default_height: 18
 points:
   zones:
     matrix:

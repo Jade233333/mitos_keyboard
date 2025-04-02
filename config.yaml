@@ -1,3 +1,5 @@
+meta:
+  engine: 4.1.0
 units:
   # Proxy Spacing Variables
   kx: 19 
@@ -81,13 +83,14 @@ cases:
       extrude: 1.2
 pcbs:
   board:
+    template: kicad8
     outlines:
       main:
         outline: outline
     footprints: 
       keyswitches:
         where:  true
-        what: switch_gateron_ks27_ks33
+        what: ceoloide/switch_choc_v1_v2
         params:
           reversible: true 
           include_keycap: true
@@ -95,7 +98,7 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode:
-        what: diode_tht_sod123 
+        what: ceoloide/diode_tht_sod123 
         where: true
         params:
           include_tht: true
@@ -103,9 +106,9 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0,0.3ky]
+          shift: [0,-0.4ky]
       mcu:
-        what: mcu_nice_nano
+        what: ceoloide/mcu_nice_nano
         params:
           reversible: true
         where:
@@ -113,14 +116,14 @@ pcbs:
           shift: [-48.15,-0.75]
           rotate: 90 
       reset:
-        what: reset_switch_tht_top
+        what: ceoloide/reset_switch_tht_top
         params:
           reversible: true
         where:
           ref: matrix_middle_bottom 
           shift: [5, -35]
       power: 
-        what: power_switch_smd_side
+        what: ceoloide/power_switch_smd_side
         params:
           reversible: true
         where:
@@ -128,30 +131,30 @@ pcbs:
           shift: [-6, -35]
           rotate: -90
       battery:
-        what: battery_connector_molex_pico_ezmate_1x02
+        what: ceoloide/battery_connector_molex_pico_ezmate_1x02
         params:
           reversible: true
         where:
           ref: matrix_middle_bottom
           shift: [5, -20]
       hole_lefttop:
-        what: mounting_hole_plated
+        what: ceoloide/mounting_hole_plated
         where:
           ref: matrix_pinky_top
-          shift: [0.5kx, 0.25ky]
+          shift: [0.5kx, -0.1ky]
       hole_leftbottom:
-        what: mounting_hole_plated
+        what: ceoloide/mounting_hole_plated
         where:
           ref: matrix_pinky_bottom
-          shift: [0.5kx, 0.25ky]
+          shift: [0.5kx, -0.25ky]
       hole_righttop:
-        what: mounting_hole_plated
+        what: ceoloide/mounting_hole_plated
         where:
           ref: matrix_inner_top
-          shift: [-0.5kx, 0.25ky]
+          shift: [-0.5kx, -0.1ky]
       hole_rightbottom:
-        what: mounting_hole_plated
+        what: ceoloide/mounting_hole_plated
         where:
           ref: matrix_inner_thumb
-          shift: [-0.5kx, 0.15ky]
+          shift: [-0.5kx, -0.15ky]
           

@@ -129,11 +129,31 @@ pcbs:
           ref: matrix_middle_bottom
           shift: [-6, -35]
           rotate: -90
+      keyboard_name:
+        what: ceoloide/utility_text
+        where:
+          ref: matrix_middle_bottom
+          shift: [-1.5, -27.5]
+        params:
+          reversible: true
+          height: 5
+          width: 2.5
+          thickness: 0.4
+          text: MITOS-V3
+      JLC:
+        what: ceoloide/utility_text
+        where:
+          ref: matrix_ring_bottom
+          shift: [0, -14.5]
+        params:
+          height: 1
+          thickness: 0.15
+          text: JLCJLCJLCJLC
       wire_hole:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_middle_bottom 
-          shift: [0, -20]
+          shift: [-4, -13]
         params:
           hole_size: 3 
           hole_drill: 3
@@ -143,7 +163,7 @@ pcbs:
           reversible: true
         where:
           ref: matrix_middle_bottom
-          shift: [5, -20]
+          shift: [4, -13]
       hole_lefttop:
         what: ceoloide/mounting_hole_plated
         where:

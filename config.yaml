@@ -101,12 +101,11 @@ pcbs:
         what: ceoloide/diode_tht_sod123 
         where: true
         params:
-          include_tht: true
           reversible: true 
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0,-0.4ky]
+          shift: [0,-0.32ky]
       mcu:
         what: ceoloide/mcu_nice_nano
         params:
@@ -130,6 +129,14 @@ pcbs:
           ref: matrix_middle_bottom
           shift: [-6, -35]
           rotate: -90
+      wire_hole:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_middle_bottom 
+          shift: [0, -20]
+        params:
+          hole_size: 3 
+          hole_drill: 3
       battery:
         what: ceoloide/battery_connector_molex_pico_ezmate_1x02
         params:

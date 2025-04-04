@@ -2,8 +2,8 @@ meta:
   engine: 4.1.0
 units:
   # Proxy Spacing Variables
-  kx: 19 
-  ky: 19
+  kx: u
+  ky: u
 points:
   zones:
     matrix:
@@ -164,24 +164,24 @@ pcbs:
         where:
           ref: matrix_middle_bottom
           shift: [4, -13]
-      hole_lefttop:
-        what: ceoloide/mounting_hole_plated
-        where:
-          ref: matrix_pinky_top
-          shift: [0.5kx, -0.1ky]
-      hole_leftbottom:
-        what: ceoloide/mounting_hole_plated
-        where:
-          ref: matrix_pinky_bottom
-          shift: [0.5kx, -0.25ky]
-      hole_righttop:
-        what: ceoloide/mounting_hole_plated
-        where:
-          ref: matrix_inner_top
-          shift: [-0.5kx, -0.1ky]
-      hole_rightbottom:
-        what: ceoloide/mounting_hole_plated
-        where:
-          ref: matrix_inner_thumb
-          shift: [-0.5kx, -0.15ky]
-          
+      # hole_lefttop:
+      #   what: ceoloide/mounting_hole_plated
+      #   where:
+      #     ref: matrix_pinky_top
+      #     shift: [0.5kx, -0.1ky]
+      # hole_leftbottom:
+      #   what: ceoloide/mounting_hole_plated
+      #   where:
+      #     ref: matrix_pinky_bottom
+      #     shift: [0.5kx, -0.25ky]
+      # hole_righttop:
+      #   what: ceoloide/mounting_hole_plated
+      #   where:
+      #     ref: matrix_inner_top
+      #     shift: [-0.5kx, -0.1ky]
+      # hole_rightbottom:
+      #   what: ceoloide/mounting_hole_plated
+      #   where:
+      #     ref: matrix_inner_thumb
+      #     shift: [-0.5kx, -0.15ky]
+      #

@@ -110,7 +110,7 @@ pcbs:
         adjust:
           shift: [0,-0.32ky]
       mcu:
-        what: ceoloide/mcu_nice_nano
+        what: ceoloide/mcu_supermini_nrf52840
         params:
           reversible: true
         where:
@@ -123,7 +123,7 @@ pcbs:
           reversible: true
         where:
           ref: matrix_middle_bottom 
-          shift: [5, -36]
+          shift: [4.5, -36]
       power: 
         what: ceoloide/power_switch_smd_side
         params:
@@ -132,21 +132,22 @@ pcbs:
           ref: matrix_middle_bottom
           shift: [-6, -36]
           rotate: -90
-      wire_hole:
-        what: ceoloide/mounting_hole_npth
-        where:
-          ref: matrix_middle_bottom 
-          shift: [-4, -13]
-        params:
-          hole_size: 3 
-          hole_drill: 3
+      # wire_hole:
+      #   what: ceoloide/mounting_hole_npth
+      #   where:
+      #     ref: matrix_middle_bottom 
+      #     shift: [-4, -25]
+      #   params:
+      #     hole_size: 3 
+      #     hole_drill: 3
       battery:
         what: ceoloide/battery_connector_molex_pico_ezmate_1x02
         params:
           reversible: true
         where:
           ref: matrix_middle_bottom
-          shift: [4, -13]
+          shift: [5.5, -13]
+          rotate: -90 
       keyboard_name:
         what: ceoloide/utility_text
         where:
@@ -161,30 +162,41 @@ pcbs:
       JLC:
         what: ceoloide/utility_text
         where:
-          ref: matrix_ring_bottom
-          shift: [0, -14.5]
+          ref: matrix_index_thumb
+          shift: [0, -10]
         params:
           height: 1
           thickness: 0.15
           text: JLCJLCJLCJLC
-      # hole_lefttop:
-      #   what: ceoloide/mounting_hole_plated
-      #   where:
-      #     ref: matrix_pinky_top
-      #     shift: [0.5kx, -0.1ky]
-      # hole_leftbottom:
-      #   what: ceoloide/mounting_hole_plated
-      #   where:
-      #     ref: matrix_pinky_bottom
-      #     shift: [0.5kx, -0.25ky]
-      # hole_righttop:
-      #   what: ceoloide/mounting_hole_plated
-      #   where:
-      #     ref: matrix_inner_top
-      #     shift: [-0.5kx, -0.1ky]
-      # hole_rightbottom:
-      #   what: ceoloide/mounting_hole_plated
-      #   where:
-      #     ref: matrix_inner_thumb
-      #     shift: [-0.5kx, -0.15ky]
-      #
+      hole_lefttop:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_pinky_top
+          shift: [0.5kx, -0.1ky]
+        params:
+          hole_size: 5
+          hole_drill: 5
+      hole_leftbottom:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_pinky_bottom
+          shift: [0.5kx, -0.25ky]
+        params:
+          hole_size: 5
+          hole_drill: 5
+      hole_righttop:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_inner_top
+          shift: [-0.5kx, -0.1ky]
+        params:
+          hole_size: 5
+          hole_drill: 5
+      hole_rightbottom:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_inner_thumb
+          shift: [-0.5kx, -0.15ky]
+        params:
+          hole_size: 5
+          hole_drill: 5

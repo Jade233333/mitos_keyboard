@@ -97,6 +97,8 @@ pcbs:
           reversible: true 
           include_keycap: true
           solder: false
+          include_stabilizer_pad: false
+          choc_v1_support: false
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode:
@@ -108,7 +110,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0,-0.32ky]
+          shift: [0,-0.28ky]
       mcu:
         what: ceoloide/mcu_supermini_nrf52840
         params:

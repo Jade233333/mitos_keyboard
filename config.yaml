@@ -6,6 +6,10 @@ units:
   ky: 19
   px: 19.5
   py: 19.5
+  case_px: kx+4
+  case_py: ky+4 
+  cpx: case_px
+  cpy: case_py
 points:
   zones:
     matrix:
@@ -48,19 +52,37 @@ points:
         top:
           row_net: P15
 outlines:
+  case_raw:
+    - what: rectangle
+      where: true
+      size: [cpx,cpy]
+      fillet: 0.8
   raw:
     - what: rectangle
       where: true
       size: [px,py]
       fillet: 0.8
-  board:
+  case_compensation:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_inner_thumb
+          shift: [0.5cpx,-0.5cpy]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5cpx,-1.5cpy+2]
+        - ref: matrix_pinky_home
+          shift: [-0.5cpx,0]
+        - ref: matrix_inner_home
+          shift: [0.5cpx,0] 
+      fillet: 0.8
+  compensation:
     - what: polygon
       operation: stack
       points:
         - ref: matrix_inner_thumb
           shift: [0.5px,-0.5py]
         - ref: matrix_pinky_bottom
-          shift: [-0.5px,-1.5py-2]
+          shift: [-0.5px,-1.5py-1.5]
         - ref: matrix_pinky_home
           shift: [-0.5px,0]
         - ref: matrix_inner_home
@@ -71,15 +93,21 @@ outlines:
       where: true
       bound: false
       size: [14, 14]
-  outline:
-    - name: board
+  case_outline:
+    - name: case_raw
     - operation: add
-      name: raw
+      name: case_compensation
+  outline:
+    - name: raw
+    - operation: add
+      name: compensation
   plate:
     - name: raw 
     - operation: subtract
       name: keys
 cases:
+  bottom:
+    - name: case_outline
   plate:
     - name: plate
       extrude: 1.2

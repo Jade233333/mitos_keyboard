@@ -2,19 +2,20 @@ meta:
   engine: 4.1.0
 units:
   # Proxy Spacing Variables
-  kx: 19 
+  kx: 19
   ky: 19
   px: 19.5
   py: 19.5
   case_px: kx+4
-  case_py: ky+4 
+  case_py: ky+4
   cpx: case_px
   cpy: case_py
+  drill_radius: 0.8
 points:
   zones:
     matrix:
       anchor:
-        shift: [175,-175]
+        shift: [175, -175]
       key:
         padding: 1ky
         spread: 1kx
@@ -55,38 +56,38 @@ outlines:
   case_raw:
     - what: rectangle
       where: true
-      size: [cpx,cpy]
+      size: [cpx, cpy]
       fillet: 0.8
   raw:
     - what: rectangle
       where: true
-      size: [px,py]
+      size: [px, py]
       fillet: 0.8
   case_compensation:
     - what: polygon
       operation: stack
       points:
         - ref: matrix_inner_thumb
-          shift: [0.5cpx,-0.5cpy]
+          shift: [0.5cpx, -0.5cpy]
         - ref: matrix_pinky_bottom
-          shift: [-0.5cpx,-1.5cpy+2]
+          shift: [-0.5cpx, -1.5cpy+2]
         - ref: matrix_pinky_home
-          shift: [-0.5cpx,0]
+          shift: [-0.5cpx, 0]
         - ref: matrix_inner_home
-          shift: [0.5cpx,0] 
+          shift: [0.5cpx, 0]
       fillet: 0.8
   compensation:
     - what: polygon
       operation: stack
       points:
         - ref: matrix_inner_thumb
-          shift: [0.5px,-0.5py]
+          shift: [0.5px, -0.5py]
         - ref: matrix_pinky_bottom
-          shift: [-0.5px,-1.5py-1.5]
+          shift: [-0.5px, -1.5py-1.5]
         - ref: matrix_pinky_home
-          shift: [-0.5px,0]
+          shift: [-0.5px, 0]
         - ref: matrix_inner_home
-          shift: [0.5px,0] 
+          shift: [0.5px, 0]
       fillet: 0.8
   keys:
     - what: rectangle
@@ -102,14 +103,38 @@ outlines:
     - operation: add
       name: compensation
   plate:
-    - name: raw 
+    - name: outline
     - operation: subtract
       name: keys
-cases:
-  bottom:
-    - name: case_outline
-  plate:
+  mouting:
+    - what: circle
+      radius: drill_radius
+      where:
+        ref: matrix_pinky_top
+        shift: [0.5kx, -0.1ky]
+    - what: circle
+      radius: drill_radius
+      where:
+        ref: matrix_pinky_bottom
+        shift: [0.5kx, -0.25ky]
+    - what: circle
+      radius: drill_radius
+      where:
+        ref: matrix_inner_top
+        shift: [-0.5kx, -0.1ky]
+    - what: circle
+      radius: drill_radius
+      where:
+        ref: matrix_inner_thumb
+        shift: [-0.5kx, -0.15ky]
+  plate_with_mounting:
     - name: plate
+    - operation: subtract
+      name: mouting
+
+cases:
+  plate:
+    - name: plate_with_mounting
       extrude: 1.2
 pcbs:
   board:
@@ -117,12 +142,12 @@ pcbs:
     outlines:
       main:
         outline: outline
-    footprints: 
+    footprints:
       keyswitches:
-        where:  true
+        where: true
         what: ceoloide/switch_choc_v1_v2
         params:
-          reversible: true 
+          reversible: true
           include_keycap: true
           solder: false
           include_stabilizer_pad: false
@@ -130,31 +155,31 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
       diode:
-        what: ceoloide/diode_tht_sod123 
+        what: ceoloide/diode_tht_sod123
         where: true
         params:
-          include_traces_vias: true 
-          reversible: true 
+          include_traces_vias: true
+          reversible: true
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [0,-0.28ky]
+          shift: [0, -0.28ky]
       mcu:
         what: ceoloide/mcu_supermini_nrf52840
         params:
           reversible: true
         where:
           ref: matrix_index_thumb
-          shift: [-48.5,-1.5]
-          rotate: 90 
+          shift: [-48.5, -1.5]
+          rotate: 90
       reset:
         what: ceoloide/reset_switch_tht_top
         params:
           reversible: true
         where:
-          ref: matrix_middle_bottom 
+          ref: matrix_middle_bottom
           shift: [4.5, -36]
-      power: 
+      power:
         what: ceoloide/power_switch_smd_side
         params:
           reversible: true
@@ -162,14 +187,6 @@ pcbs:
           ref: matrix_middle_bottom
           shift: [-6, -36]
           rotate: -90
-      # wire_hole:
-      #   what: ceoloide/mounting_hole_npth
-      #   where:
-      #     ref: matrix_middle_bottom 
-      #     shift: [-4, -25]
-      #   params:
-      #     hole_size: 3 
-      #     hole_drill: 3
       battery:
         what: ceoloide/battery_connector_molex_pico_ezmate_1x02
         params:
@@ -177,7 +194,7 @@ pcbs:
         where:
           ref: matrix_middle_bottom
           shift: [5.5, -13]
-          rotate: -90 
+          rotate: -90
       keyboard_name:
         what: ceoloide/utility_text
         where:
@@ -198,7 +215,7 @@ pcbs:
           height: 1
           thickness: 0.15
           text: JLCJLCJLCJLC
-      hole_lefttop:
+      mounting_lefttop:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_pinky_top
@@ -206,7 +223,7 @@ pcbs:
         params:
           hole_size: 5
           hole_drill: 5
-      hole_leftbottom:
+      mounting_leftbottom:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_pinky_bottom
@@ -214,7 +231,7 @@ pcbs:
         params:
           hole_size: 5
           hole_drill: 5
-      hole_righttop:
+      mounting_righttop:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_top
@@ -222,7 +239,7 @@ pcbs:
         params:
           hole_size: 5
           hole_drill: 5
-      hole_rightbottom:
+      mounting_rightbottom:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_thumb

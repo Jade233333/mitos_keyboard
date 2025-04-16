@@ -4,12 +4,8 @@ units:
   # Proxy Spacing Variables
   kx: 19
   ky: 19
-  px: 19.5
-  py: 19.5
-  case_px: kx+4
-  case_py: ky+4
-  cpx: case_px
-  cpy: case_py
+  px: kx+0.5
+  py: ky+0.5
   drill_radius: 0.8
 points:
   zones:
@@ -53,55 +49,46 @@ points:
         top:
           row_net: P15
 outlines:
-  case_raw:
-    - what: rectangle
-      where: true
-      size: [cpx, cpy]
-      fillet: 0.8
   raw:
     - what: rectangle
       where: true
       size: [px, py]
-      fillet: 0.8
-  case_compensation:
+  cutout:
     - what: polygon
       operation: stack
       points:
-        - ref: matrix_inner_thumb
-          shift: [0.5cpx, -0.5cpy]
         - ref: matrix_pinky_bottom
-          shift: [-0.5cpx, -1.5cpy+2]
-        - ref: matrix_pinky_home
-          shift: [-0.5cpx, 0]
-        - ref: matrix_inner_home
-          shift: [0.5cpx, 0]
-      fillet: 0.8
+          shift: [-1kx, -0.5ky]
+        - ref: matrix_pinky_bottom
+          shift: [-1kx, -2ky]
+        - ref: matrix_pinky_bottom
+          shift: [2.5kx, -2ky]
+        - ref: matrix_pinky_bottom
+          shift: [2.5kx, -0.5ky]
   compensation:
     - what: polygon
       operation: stack
       points:
         - ref: matrix_inner_thumb
           shift: [0.5px, -0.5py]
-        - ref: matrix_pinky_bottom
-          shift: [-0.5px, -1.5py-1.5]
-        - ref: matrix_pinky_home
-          shift: [-0.5px, 0]
-        - ref: matrix_inner_home
-          shift: [0.5px, 0]
-      fillet: 0.8
+        - ref: matrix_inner_thumb
+          shift: [-4kx-0.5px, -0.5py]
+        - ref: matrix_inner_thumb
+          shift: [-4kx-0.5px, 2py]
+        - ref: matrix_inner_thumb
+          shift: [0.5px, 2py]
   keys:
     - what: rectangle
       where: true
       bound: false
       size: [14, 14]
-  case_outline:
-    - name: case_raw
-    - operation: add
-      name: case_compensation
   outline:
     - name: raw
     - operation: add
       name: compensation
+    - operation: subtract
+      name: cutout
+      fillet: 0.8
   plate:
     - name: outline
     - operation: subtract
@@ -131,7 +118,6 @@ outlines:
     - name: plate
     - operation: subtract
       name: mouting
-
 cases:
   plate:
     - name: plate_with_mounting

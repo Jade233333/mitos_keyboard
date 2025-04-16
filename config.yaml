@@ -82,6 +82,11 @@ outlines:
       where: true
       bound: false
       size: [14, 14]
+  pure_outline:
+    - name: raw
+    - operation: add
+      name: compensation
+      fillet: 0.8
   outline:
     - name: raw
     - operation: add
@@ -118,10 +123,6 @@ outlines:
     - name: plate
     - operation: subtract
       name: mouting
-cases:
-  plate:
-    - name: plate_with_mounting
-      extrude: 1.2
 pcbs:
   board:
     template: kicad8

@@ -128,7 +128,7 @@ pcbs:
     template: kicad8
     outlines:
       main:
-        outline: outline
+        outline: pure_outline
     footprints:
       keyswitches:
         where: true
@@ -208,29 +208,29 @@ pcbs:
           ref: matrix_pinky_top
           shift: [0.5kx, -0.1ky]
         params:
-          hole_size: 5
-          hole_drill: 5
+          hole_size: 3.8
+          hole_drill: 3.8
       mounting_leftbottom:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_pinky_bottom
           shift: [0.5kx, -0.25ky]
         params:
-          hole_size: 5
-          hole_drill: 5
+          hole_size: 3.8
+          hole_drill: 3.8
       mounting_righttop:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_top
           shift: [-0.5kx, -0.1ky]
         params:
-          hole_size: 5
-          hole_drill: 5
+          hole_size: 3.8
+          hole_drill: 3.8
       mounting_rightbottom:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_thumb
           shift: [-0.5kx, -0.15ky]
         params:
-          hole_size: 5
-          hole_drill: 5
+          hole_size: 3.8
+          hole_drill: 3.8

@@ -157,22 +157,24 @@ pcbs:
           reversible: true
         where:
           ref: matrix_index_thumb
-          shift: [-48.5, -1.5]
+          shift: [-49.5, -2]
           rotate: 90
       reset:
-        what: ceoloide/reset_switch_tht_top
+        what: ceoloide/reset_switch_smd_side
         params:
           reversible: true
+          include_bosses: true
         where:
           ref: matrix_middle_bottom
-          shift: [4.5, -36]
+          shift: [3.5, -36.5]
+          rotate: 180
       power:
         what: ceoloide/power_switch_smd_side
         params:
           reversible: true
         where:
           ref: matrix_middle_bottom
-          shift: [-6, -36]
+          shift: [-7, -37]
           rotate: -90
       battery:
         what: ceoloide/battery_connector_molex_pico_ezmate_1x02
@@ -186,13 +188,13 @@ pcbs:
         what: ceoloide/utility_text
         where:
           ref: matrix_middle_bottom
-          shift: [-1.5, -27.5]
+          shift: [-3, -27.5]
         params:
           reversible: true
           height: 5
           width: 2.5
           thickness: 0.4
-          text: MITOS-V3
+          text: MITOS-V4
       JLC:
         what: ceoloide/utility_text
         where:
@@ -208,29 +210,29 @@ pcbs:
           ref: matrix_pinky_top
           shift: [0.5kx, -0.1ky]
         params:
-          hole_size: 3.8
-          hole_drill: 3.8
+          hole_size: 4.8
+          hole_drill: 4.8
       mounting_leftbottom:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_pinky_bottom
           shift: [0.5kx, -0.25ky]
         params:
-          hole_size: 3.8
-          hole_drill: 3.8
+          hole_size: 4.8
+          hole_drill: 4.8
       mounting_righttop:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_top
           shift: [-0.5kx, -0.1ky]
         params:
-          hole_size: 3.8
-          hole_drill: 3.8
+          hole_size: 4.8
+          hole_drill: 4.8
       mounting_rightbottom:
         what: ceoloide/mounting_hole_npth
         where:
           ref: matrix_inner_thumb
           shift: [-0.5kx, -0.15ky]
         params:
-          hole_size: 3.8
-          hole_drill: 3.8
+          hole_size: 4.8
+          hole_drill: 4.8
